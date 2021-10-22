@@ -5,7 +5,7 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("ola mundo");
 });
 
