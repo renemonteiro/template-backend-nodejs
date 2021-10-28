@@ -8,12 +8,12 @@
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules  src/server.ts",
     "start": "node build/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "knex: init": "knex --knexfile knex init -x ts",
-    "knex: make migration": "knex --knexfile knex migrate:make migration_name -x ts",
-    "knex: migrate": "knex --knexfile knexfile.ts migrate:latest",
-    "knex: seed": "knex --knexfile knexfile.ts seed:run",
-    "knex: rollback": "knex --knexfile knexfile.ts migrate:rollback",
-    "knex: rollback--all": "knex --knexfile knexfile.ts migrate:rollback --all"
+    "knex: init": "cd src/database && knex --knexfile knex init -x ts",
+    "knex: make migration": " cd src/database && knex --knexfile knex migrate:make migration_name -x ts",
+    "knex: migrate": "cd src/database/migrations && knex --knexfile knexfile.ts migrate:latest",
+    "knex: seed": "cd src/database && knex --knexfile knexfile.ts seed:run",
+    "knex: rollback": "cd src/database && knex --knexfile knexfile.ts migrate:rollback",
+    "knex: rollback--all": "cd src/database && knex --knexfile knexfile.ts migrate:rollback --all"
   },
   "keywords": [],
   "author": "",
