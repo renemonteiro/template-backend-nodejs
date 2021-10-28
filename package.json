@@ -4,10 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules  src/server.ts",
     "start": "node build/server.js",
-    "build": "tsc",
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules  src/server.ts"
+    "knex: init": "knex --knexfile knex init -x ts",
+    "knex: make migration": "knex --knexfile knex migrate:make migration_name -x ts",
+    "knex: migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "knex: seed": "knex --knexfile knexfile.ts seed:run",
+    "knex: rollback": "knex --knexfile knexfile.ts migrate:rollback",
+    "knex: rollback--all": "knex --knexfile knexfile.ts migrate:rollback --all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -23,9 +29,10 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "knex": "^0.95.11",
+    "knex": "^0.95.12",
     "mysql": "^2.18.1",
     "nodemailer": "^6.7.0",
+    "sqlite3": "^5.0.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
