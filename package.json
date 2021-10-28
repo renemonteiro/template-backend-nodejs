@@ -13,7 +13,7 @@
     "knex: make migrate": "cd src/database/migrations && knex --knexfile knexfile.ts migrate:latest",
     "knex: create seed file": "cd src/database && knex --knexfile knexfile.ts seed:make seed_name",
     "knex: make seeds": "cd src/database/seeds && knex --knexfile knexfile.ts seed:run",
-    "knex: rollback last update": "cd src/database && knex --knexfile knexfile.ts migrate:rollback",
+    "knex: rollback lastest": "cd src/database && knex --knexfile knexfile.ts migrate:rollback",
     "knex: rollback--all": "cd src/database && knex --knexfile knexfile.ts migrate:rollback --all"
   },
   "keywords": [],
