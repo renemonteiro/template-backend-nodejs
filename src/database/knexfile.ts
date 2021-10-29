@@ -1,6 +1,6 @@
 import path from "path";
 
-module.exports = {
+export const knexfile = {
   client: "sqlite3",
   connection: {
     filename: path.resolve(__dirname, "database.sqlite"),
