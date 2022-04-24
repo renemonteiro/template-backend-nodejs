@@ -5,9 +5,11 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
+const response: string = "ola mundo";
+
 app.get("/", (req: Request, res: Response) => {
 
-  res.status(200).send({ message: "olá mundo!!" });
+  res.status(200).send({ message: response });
 });
 
 app.listen(process.env.PORT || 3003, () => {
